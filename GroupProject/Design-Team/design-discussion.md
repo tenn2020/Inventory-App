@@ -2,7 +2,7 @@
 
 #### Design 1: Fahim
 
-![Fahim's Design](/design-images/fahimny36.png)
+![Fahim's Design](design-images/fahimny36.png)
 
 
 
@@ -22,7 +22,7 @@
 
 #### Design 2: Marwan
 
-![Marwan's Design](/design-images/MarwanAljawarneh.png)
+![Marwan's Design](design-images/MarwanAljawarneh.png)
 
 ###### Pros
 
@@ -36,7 +36,7 @@
 
 #### Design 3: Alejandra
 
-![Alejandra's Design](/design-images/alereyes18.png)
+![Alejandra's Design](design-images/alereyes18.png)
 
 ###### Pros
 
@@ -50,7 +50,7 @@
 
 #### Design 4: Abdul
 
-![Abdul's Design](/design-images/wahab65.png)
+![Abdul's Design](design-images/wahab65.png)
 
 ###### Pros
 
@@ -64,7 +64,7 @@
 
 #### Design 5: Tenzin
 
-![Tenzin's Design](/design-images/flushingkbbq.png)
+![Tenzin's Design](design-images/flushingkbbq.png)
 
 ###### Pros
 
@@ -78,7 +78,7 @@
 
 #### Team Design
 
-![Team Design](/design-images/design-team.png)
+![Team Design](design-images/design-team.png)
 
 ###### Commonalities 
 
