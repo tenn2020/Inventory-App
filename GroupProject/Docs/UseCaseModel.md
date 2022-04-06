@@ -1,6 +1,6 @@
 # Use Case Model
 
-- *Author**: \<Marwan Aljawarneh, Fahim Ahmed, Tenzin Norsang\>
+- **Author**: \<Marwan Aljawarneh, Fahim Ahmed, Tenzin Norsang\>
 
 ## 1 Use Case Diagram
 
