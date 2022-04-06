@@ -66,7 +66,7 @@ Our testing strategy will include unit testing, integration testing, system test
 
 **Integration Testing**: Once we have an initial version of the application, we will revise the test plan to include integration tests. For example, we will have a test for the log in process for a customer.
 
-**System Testing: **Once we have an initial version of the application, we will revise the test plan to include system testing. During this phase of testing, we will check if the application compiles without errors, as well as find and document defects in the system, and monitor the performance of the application
+**System Testing:** Once we have an initial version of the application, we will revise the test plan to include system testing. During this phase of testing, we will check if the application compiles without errors, as well as find and document defects in the system, and monitor the performance of the application
 
 **Acceptance Testing:** During this phase of the test plan, we will ensure that the application meets all of the requirements, and functions properly.
 
