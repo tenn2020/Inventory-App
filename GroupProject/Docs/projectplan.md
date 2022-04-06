@@ -6,9 +6,9 @@ Flooring Inc. is a company that sells different types of floors such as wood, ti
 
 ## 2 Process Description
 ### **Non-Employee User Activity:** 
-**#### Login/Selects The User Button**
+#### **Login/Selects The User Button**
 To log into the system, an employee must select the Employee Login Button when the application is launched.
-**#### Search Products**
+#### **Search Products**
 To search for a product, the user must input valid text into the search box and click the submit button. Search is successful when the application returns the results.
 
 ### **Employee User Activity:** 
