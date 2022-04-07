@@ -1,71 +1,67 @@
 # Project Plan
-**Author**: Team 1 
+
+**Author**: \<Team 1\>
 
 ## 1 Introduction
-Flooring Inc. is a company that sells different types of floors such as wood, tile, stone, vinyl, and laminate. The company reached out to our team to develop an android application that could track and update their inventory. 
 
+Flooring Inc. is a company that sells different types of floors such as wood, tile, stone, vinyl, and laminate. The company reached out to our team to develop an android application that could track and update their inventory.
 ## 2 Process Description
-### **Non-Employee User Activity:** 
-#### **Login/Selects The User Button**
-To log into the system, an employee must select the Employee Login Button when the application is launched.
-#### **Search Products**
-To search for a product, the user must input valid text into the search box and click the submit button. Search is successful when the application returns the results.
 
-### **Employee User Activity:** 
-#### **Login/Selects the Employee Button**
-To log into the system, an employee must select the Employee Login Button when the application is launched.
-#### **Search Products**
-To search for a product, the user must input valid text into the search box and click the submit button. Search is successful when the application returns the results.
-#### **Add, Edit, & Delete Products**
-To make changes to a product, an employee must be logged in. To edit a product in a store, they must click the appropriate button and provide the information for the product they are changing, and make the changes they want. The activity completes successfully once the store offering is updated.
+- Develop an initial project plan
 
-RUP ACTIVITIES
-Inception
-Entrance: Understanding of requirements
-Exit: Initial use case model, class diagram
-Elaboration
-Entrance: Use case analysis, a delegation of design tasks
-Exit: Completed design document, use case model, test plan, and mock GUI
-Construction
-Entrance: Design document, test plan, use case model, mock GUI
-Exit: User documentation, functional product
-Transition
-Entrance: Functional product
-Exit: Final product release
+  During this phase, we will review the requirements and develop a class diagram to represent the system requested by the client. 
 
+  - Entrance Criteria: Get the system requirements from the client.
+  - Exit Criteria: Develop UML diagrams, an initial use case model, and an initial test plan according to the requirements.
+
+- Elaboration
+
+  During this phase, we will develop a project plan and identify and assign roles to team members. We will create a use case model, a test plan, design the architecture of the system, identify constraints and design considerations, and create supplemental diagrams. We will also create a mock of the GUI that will be used for the system.
+
+  - Entrance Criteria: Class diagram, understanding of the requirements.
+  - Exit Criteria: Supplemental UML diagrams, use case model, test plan, project plan
+
+- Construction
+
+  During this phase, we will create an initial version of the application, and begin executing the test plan. We will also revise previously created documents if necessary. We will also create a user manual for the application.
+
+  - Entrance Criteria: Project plan, the product from a previous iteration of this phase
+  - Exit Criteria: Test case results, an iteration plan for the next iteration of this phase, updated initial version of the application.
+
+- Transition
+
+  During this phase we will test the application extensively, finalize the user manual, and deliver the final product to the client. 
+
+  - Entrance Criteria: Latest version of the application
+  - Exit Criteria: Updated documents, final version of the application that passes all test cases.
 
 ## 3 Team
 
-Roles:
-Project Manager: Responsible for ensuring all work is completed and submitted.
-Test Manager: Responsible for developing and implementing a test plan.
-Use Case Manager: Responsible for identifying use cases of the product and designing a use case model
-Architecture & Design Manager: Responsible for creating component and sequence diagrams and specifying the architecture of the product, and documenting design considerations and constraints.
-GUI Designer: Responsible for creating a mock GUI and implementing the GUI.
-Programmer: Responsible for programming parts of the final product.
+- Abdul Wahab, Marwan Aljawarneh, Tenzin Norsang, Fahim Ahmed, Alejandra Reyes
 
+- Project Manager: Responsible for ensuring all work is completed and submitted.
 
-Team Member
-Role
-Abdul Wahab
-GUI Designer, Programmer
-Marwan Aljawarneh
-Use Case Manager, Programmer
-Tenzin Norsang
-Architecture & Design Manager, Programmer
-Fahim Ahmed
-Test Manager, Programmer, Use Case
-Alejandra Reyes
-Project Manager, Architecture & Design Manager, Programmer
+- Tester: Responsible for developing and implementing a test plan.
 
+- Use Case Analyzer: Responsible for developing a use case model.
 
+- Architect: Responsible for designing the architecture of the system, including additional diagrams.
 
+- Designer: Responsible for documenting design decisions and considerations.
 
+- GUI Designer: Responsible for designing and implementing the GUI of the application.
 
-Fahim - Test plan
-Marwan - use case
-Tenzin, Alejandra, Abdul - design document
-	Abdul: 3,4
-	Alejandra: 2
-	Tenzin: 1
-Extra requirements - TBD
+- Programmer: Responsible for programming parts of the application (specifics TBD).
+
+ | Team Member       | Roles                                  |
+  | ----------------- | -------------------------------------- |
+  | Abdul Wahab       | GUI Designer, Programmer               |
+  | Alejandra Reyes   | Project Manager, Architect, Programmer |
+  | Marwan Aljawarneh | Use Case Analyzer, Programmer          |
+  | Tenzin Norsang    | Designer, Architect, Programmer        |
+  | Fahim Ahmed       | Tester, Use Case Analyzer, Programmer  |
+
+  
+
+  
+
