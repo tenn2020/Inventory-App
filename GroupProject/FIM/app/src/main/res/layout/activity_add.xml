@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="344dp"
+        android:layout_height="378dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="41dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/addFloorName"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:editable="false"
+            android:text="Type Floor Name" />
+
+        <Spinner
+            android:id="@+id/addFloorCategory"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:entries="Wood, Tile, Stone, Vinyl, Laminate" />
+
+        <Spinner
+            android:id="@+id/addFloorType"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:entries="Tile, Porcelain, Stone, Wood, Vinyl, Laminate"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/addFloorSpecies"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <Spinner
+            android:id="@+id/addFloorColor"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:entries="Brown, Red, White, Beige, Gray, Black" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="16dp"
+        android:text="Flooring Manager"
+        android:textSize="24sp" />
+
+</RelativeLayout>
