@@ -18,36 +18,7 @@
         android:layout_marginEnd="41dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/addFloorName"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:editable="false"
-            android:text="Type Floor Name" />
 
-        <Spinner
-            android:id="@+id/addFloorCategory"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:entries="Wood, Tile, Stone, Vinyl, Laminate" />
-
-        <Spinner
-            android:id="@+id/addFloorType"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:entries="Tile, Porcelain, Stone, Wood, Vinyl, Laminate"
-            android:spinnerMode="dropdown" />
-
-        <Spinner
-            android:id="@+id/addFloorSpecies"
-            android:layout_width="match_parent"
-            android:layout_height="75dp" />
-
-        <Spinner
-            android:id="@+id/addFloorColor"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:entries="Brown, Red, White, Beige, Gray, Black" />
     </LinearLayout>
 
     <TextView

@@ -26,6 +26,7 @@ public class ProductActivity extends AppCompatActivity {
         this.getSupportActionBar().hide();
 
         floorCategoryList = new ArrayList<>();
+
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
         categoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 

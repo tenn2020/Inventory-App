@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FlooringManager">
-        <activity android:name=".TypeActivity"></activity>
+        <activity android:name=".editActivity"></activity>
         <activity android:name=".AddActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".ProductActivity" />

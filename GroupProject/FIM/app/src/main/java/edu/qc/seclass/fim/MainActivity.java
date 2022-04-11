@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button customerBtn;
+    Button employeeBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +20,19 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         customerBtn = findViewById(R.id.customerBtn);
+        employeeBtn = findViewById(R.id.employeeBtn);
         customerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(MainActivity.this, ProductActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+        employeeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
