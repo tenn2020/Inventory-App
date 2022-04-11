@@ -7,36 +7,125 @@
     tools:context=".DetailActivity">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/TitleDetailView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:text="TextView" />
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="53dp"
+        android:text="Flooring Manager"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewFloorCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="38dp"
-        android:text="TextView" />
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="141dp"
+        android:text="Floor Category:"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewFloorType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewFloorCategory"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="45dp"
+        android:text="Floor Type:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewFloorSpecies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewFloorType"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="45dp"
+        android:text="Floor Species:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewFloorSpecies"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="45dp"
+        android:text="Color:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewColor"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="45dp"
+        android:text="Brand:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/textBoxFloorCategory"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="38dp"
-        android:text="TextView" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="128dp"
+        android:layout_toEndOf="@+id/textViewFloorCategory"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textBoxFloorType"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textBoxFloorCategory"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textViewFloorType"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textBoxFloorSpecies"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textBoxFloorType"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/textViewFloorSpecies"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textBoxColor"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textBoxFloorSpecies"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/textViewColor"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textBoxBrand"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textBoxColor"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/textViewBrand"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
 </RelativeLayout>
