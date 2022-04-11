@@ -1,14 +1,9 @@
 package edu.qc.seclass.fim.models;
 
-import java.util.List;
+public class FloorProduct {
 
-public class FloorCategory {
-//    String color;
-//    String brand;
-//
     private String category;
-    
-    //private List<FloorType> listofTypes;
+    private String type;
 
     public String getCategory() {
         return category;

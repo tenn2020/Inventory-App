@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.qc.seclass.fim.Adapters.ProductAdapter;
-import edu.qc.seclass.fim.models.FloorCategory;
+import edu.qc.seclass.fim.models.FloorProduct;
 
 public class ProductActivity extends AppCompatActivity {
 
     private RecyclerView categoryRecyclerView;
     private ProductAdapter productAdapter;
 
-    private List <FloorCategory> floorCategoryList;
+    private List <FloorProduct> floorList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class ProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product);
         this.getSupportActionBar().hide();
 
-        floorCategoryList = new ArrayList<>();
+        floorList = new ArrayList<>();
 
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
         categoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -35,13 +35,13 @@ public class ProductActivity extends AppCompatActivity {
         });
         categoryRecyclerView.setAdapter(productAdapter);
 
-        FloorCategory category1 = new FloorCategory();
-        category1.setCategory("Wood");
+        FloorProduct floor1 = new FloorProduct();
+        floor1.setCategory("Wood");
 
-        floorCategoryList.add(category1);
-        floorCategoryList.add(category1);
+        floorList.add(floor1);
+        floorList.add(floor1);
 
-        productAdapter.setList(floorCategoryList);
+        productAdapter.setList(floorList);
 
     }
 }

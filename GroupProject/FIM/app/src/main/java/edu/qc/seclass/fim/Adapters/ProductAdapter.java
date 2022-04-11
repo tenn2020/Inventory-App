@@ -12,12 +12,12 @@ import java.util.List;
 
 import edu.qc.seclass.fim.ProductActivity;
 import edu.qc.seclass.fim.R;
-import edu.qc.seclass.fim.models.FloorCategory;
+import edu.qc.seclass.fim.models.FloorProduct;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
 
-    private List<FloorCategory> categoryList;
+    private List<FloorProduct> productList;
     private ProductActivity activity;
 
     public ProductAdapter(ProductActivity activity){
@@ -35,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
-        FloorCategory item = categoryList.get(position);
+        FloorProduct item = productList.get(position);
         holder.category.setText(item.getCategory());
    }
 //    @Override
@@ -47,11 +47,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return categoryList.size();
+        return productList.size();
     }
 
-    public void setList(List<FloorCategory> categoryList){
-        this.categoryList = categoryList;
+    public void setList(List<FloorProduct> productList){
+        this.productList = productList;
         notifyDataSetChanged();
     }
 
