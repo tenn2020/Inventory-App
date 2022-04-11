@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FlooringManager">
-        <activity android:name="edu.qc.seclass.fim.AddActivity"></activity>
-        <activity android:name="edu.qc.seclass.fim.DetailActivity" />
-        <activity android:name="edu.qc.seclass.fim.ProductActivity" />
-        <activity android:name="edu.qc.seclass.fim.MainActivity">
+        <activity android:name=".TypeActivity"></activity>
+        <activity android:name=".AddActivity" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

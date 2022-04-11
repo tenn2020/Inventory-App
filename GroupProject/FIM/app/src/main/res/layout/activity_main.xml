@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/customerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -15,10 +15,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="261dp"
         android:layout_marginEnd="156dp"
-        android:text="Button" />
+        android:text="Customer" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/employeeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -26,5 +26,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="165dp"
         android:layout_marginTop="373dp"
-        android:text="Button" />
+        android:text="Employee" />
 </RelativeLayout>
