@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".AddActivity">
 
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="16dp"
+        android:text="Flooring Manager"
+        android:textSize="24sp" />
+
     <LinearLayout
         android:layout_width="344dp"
         android:layout_height="378dp"
@@ -19,18 +31,44 @@
         android:orientation="vertical">
 
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/categoryEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Product Category"
+            android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/pageTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="16dp"
-        android:text="Flooring Manager"
-        android:textSize="24sp" />
+        <EditText
+            android:id="@+id/typeEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Product Type"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/speciesEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Product Species"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/colorEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Product Color"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btnPush"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+    </LinearLayout>
 
 </RelativeLayout>

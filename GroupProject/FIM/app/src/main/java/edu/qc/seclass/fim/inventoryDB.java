@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -12,7 +13,7 @@ public class inventoryDB extends SQLiteOpenHelper {
     private Context context;
     private static final String DATABASE_NAME = "FloorInventory.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_NAME = "my store";
+    private static final String TABLE_NAME = "my_store";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_CATEGORY = "floor_category";
     private static final String COLUMN_TYPE = "floor_type";
@@ -50,5 +51,12 @@ public class inventoryDB extends SQLiteOpenHelper {
         cv.put(COLUMN_TYPE, type);
         cv.put(COLUMN_SPECIES, species);
         cv.put(COLUMN_COLOR, color);
+        long result = db.insert(TABLE_NAME, null, cv);
+        if(result == -1) {
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

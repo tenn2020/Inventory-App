@@ -5,6 +5,7 @@ public class FloorProduct {
     private String category;
     private String type;
 
+
     public String getCategory() {
         return category;
     }
