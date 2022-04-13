@@ -1,5 +1,7 @@
 package edu.qc.seclass.fim.Adapters;
 
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.qc.seclass.fim.ProductActivity;
@@ -18,16 +21,29 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
 
     private List<FloorProduct> productList;
-    private ProductActivity activity;
+    private Activity activity;
+    private ArrayList floor_id, floor_category, floor_type, floor_species, floor_color;
+    private Context context;
 
-    public ProductAdapter(ProductActivity activity){
+    public ProductAdapter(Activity activity, Context context, ArrayList floor_id, ArrayList floor_category, ArrayList floor_type, ArrayList floor_species, ArrayList floor_color){
+        this.context = context;
         this.activity = activity;
+        this.floor_category = floor_category;
+        this.floor_type = floor_type;
+        this.floor_species = floor_species;
+        this.floor_id = floor_id;
+        this.floor_color = floor_color;
+
     }
+
+//    public ProductAdapter(ProductActivity activity){
+//        this.activity = activity;
+//    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_category , parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_view, parent, false);
         return new ViewHolder(itemView);
     }
 
@@ -35,9 +51,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
-        FloorProduct item = productList.get(position);
-        holder.category.setText(item.getCategory());
-   }
+       // FloorProduct item = productList.get(position);
+        holder.floor_category_txt.setText(String.valueOf(floor_category.get(position)));
+        holder.floor_type_txt.setText(String.valueOf(floor_type.get(position)));
+    }
 //    @Override
 //    public void onBindViewHolder(@NonNull ViewHolder holder, int position){
 //
@@ -47,20 +64,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return floor_category.size();
     }
 
-    public void setList(List<FloorProduct> productList){
-        this.productList = productList;
-        notifyDataSetChanged();
-    }
+//    public void setList(List<FloorProduct> productList){
+//        this.productList = productList;
+//        notifyDataSetChanged();
+//    }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        TextView category;
+        TextView floor_category_txt, floor_type_txt;
 
         public ViewHolder(View view){
             super(view);
-            category = view.findViewById(R.id.categoryName);
+            floor_category_txt = view.findViewById(R.id.floor_category_txt);
+            floor_type_txt = view.findViewById(R.id.floor_type_txt);
 
         }
 
