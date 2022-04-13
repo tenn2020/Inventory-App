@@ -4,11 +4,11 @@ This application runs on any Android OS phone that has API 21 or above. The app 
 
 When you open the app, the first screen displayed is the login page that allows the user of the app to select one of the two options: Customer or Employee. 
 
-![](images\UserManualPics\UserManualPic1.png)
+![](images/UserManualPics/UserManualPic1.png)
 
 If the user selects Customer, the user will be directed to a screen that displays all the products that the store offers, and in addition, it has a Search button at the top of the screen.
 
-![](images\UserManualPics\UserManualPic2.png)
+![](images/UserManualPics/UserManualPic2.png)
 
 If the user selects Employee, the user will be directed to a screen that displays all the products that the store offers, in addition, it has a Search button at the top of the screen and an Add button (+) at the bottom of the screen. 
 
