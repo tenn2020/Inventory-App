@@ -1,4 +1,4 @@
-# User Manuel
+# User Manual
 
 This application runs on any Android OS phone that has API 21 or above. The app functionality depends on the type of user. The Customer user type can only search products in the database, and the Employee user type can search, add, delete, and edit products in the database. 
 
