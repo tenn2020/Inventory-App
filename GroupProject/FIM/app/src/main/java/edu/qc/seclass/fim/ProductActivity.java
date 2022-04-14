@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,15 +21,15 @@ import edu.qc.seclass.fim.Adapters.ProductAdapter;
 import edu.qc.seclass.fim.models.FloorProduct;
 
 public class ProductActivity extends AppCompatActivity {
+    private static final String TAG = "MyActivity";
 
     private RecyclerView categoryRecyclerView;
     private ProductAdapter productAdapter;
 
     inventoryDB myDB;
     ArrayList<String> floor_id, floor_category, floor_type, floor_species, floor_color;
-
+    private ArrayList<FloorProduct> floorList;
     FloatingActionButton addProductBtn;
-    private List <FloorProduct> floorList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +37,9 @@ public class ProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product);
         this.getSupportActionBar().hide();
 
-       // floorList = new ArrayList<>();
 
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
-
+        floorList = getFloors();
 //        FloorProduct floor1 = new FloorProduct();
 //        floor1.setCategory("Wood");
 
@@ -58,15 +58,16 @@ public class ProductActivity extends AppCompatActivity {
             }
         });
 
-        myDB = new inventoryDB(ProductActivity.this);
-        floor_id = new ArrayList<>();
-        floor_category = new ArrayList<>();
-        floor_type = new ArrayList<>();
-        floor_species = new ArrayList<>();
-        floor_color = new ArrayList<>();
+//        myDB = new inventoryDB(ProductActivity.this);
+//        floor_id = new ArrayList<>();
+//        floor_category = new ArrayList<>();
+//        floor_type = new ArrayList<>();
+//        floor_species = new ArrayList<>();
+//        floor_color = new ArrayList<>();
 
-        storeDataInArrayList();
-        productAdapter = new ProductAdapter(ProductActivity.this,this ,  floor_id,  floor_category,  floor_type,  floor_species,  floor_color );
+//        storeDataInArrayList();
+//        productAdapter = new ProductAdapter(ProductActivity.this,this ,  floor_id,  floor_category,  floor_type,  floor_species,  floor_color );
+        productAdapter = new ProductAdapter(getApplicationContext(), floorList);
         categoryRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
         });
         categoryRecyclerView.setAdapter(productAdapter);
@@ -74,20 +75,37 @@ public class ProductActivity extends AppCompatActivity {
 
     }
 
-    void storeDataInArrayList(){
+//    void storeDataInArrayList(){
+//        Cursor cursor = myDB.readAllData();
+//        if(cursor.getCount() ==  0){
+//            Toast.makeText(this, "No data", Toast.LENGTH_LONG).show();
+//        }else{
+//            while( cursor.moveToNext()){
+//                floor_id.add(cursor.getString(0));
+//                floor_category.add(cursor.getString(0));
+//                floor_type.add(cursor.getString(0));
+//                floor_species.add(cursor.getString(0));
+//                floor_color.add(cursor.getString(0));
+//
+//            }
+//        }
+//
+//    }
+
+    private ArrayList<FloorProduct> getFloors(){
+        ArrayList<FloorProduct> list = new ArrayList<>();
+        ArrayList<String> data = new ArrayList<String>();
+        myDB = new inventoryDB(ProductActivity.this);
         Cursor cursor = myDB.readAllData();
-        if(cursor.getCount() ==  0){
-            Toast.makeText(this, "No data", Toast.LENGTH_LONG).show();
-        }else{
-            while( cursor.moveToNext()){
-                floor_id.add(cursor.getString(0));
-                floor_category.add(cursor.getString(0));
-                floor_type.add(cursor.getString(0));
-                floor_species.add(cursor.getString(0));
-                floor_color.add(cursor.getString(0));
-
-            }
+        while (cursor.moveToNext()) {
+            //Log.e(TAG, "" +cursor.getString(0));
+            list.add(new FloorProduct(
+                    cursor.getInt(0), //id
+                    cursor.getString(1), //category
+                    cursor.getString(2), //type
+                    cursor.getString(3), //species
+                    cursor.getString(4)));//color
         }
-
+        return list;
     }
-}
+    }
