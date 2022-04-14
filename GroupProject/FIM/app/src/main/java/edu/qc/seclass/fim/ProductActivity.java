@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -30,7 +31,7 @@ public class ProductActivity extends AppCompatActivity {
     ArrayList<String> floor_id, floor_category, floor_type, floor_species, floor_color;
     private ArrayList<FloorProduct> floorList;
     FloatingActionButton addProductBtn;
-
+    ImageView backImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +48,24 @@ public class ProductActivity extends AppCompatActivity {
 //        floorList.add(floor1);
 
         //productAdapter.setList(floorList);
-
+        backImage = findViewById(R.id.back_image);
+        backImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(ProductActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         addProductBtn = findViewById(R.id.addButton);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String value = extras.getString("key");
+            if(value.equals("customer")){
+                addProductBtn.setVisibility(View.INVISIBLE);
+            }
+        }
+
         addProductBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
