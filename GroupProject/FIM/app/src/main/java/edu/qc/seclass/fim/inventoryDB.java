@@ -20,7 +20,7 @@ public class inventoryDB extends SQLiteOpenHelper {
     private static final String COLUMN_TYPE = "floor_type";
     private static final String COLUMN_SPECIES = "floor_species";
     private static final String COLUMN_COLOR = "floor_color";
-
+    private static final String COLUMN_BRAND = "floor_brand";
 
 
     public inventoryDB(@Nullable Context context) {
@@ -35,12 +35,16 @@ public class inventoryDB extends SQLiteOpenHelper {
                         COLUMN_CATEGORY + " TEXT, " +
                         COLUMN_TYPE + " TEXT, "+
                         COLUMN_SPECIES + " TEXT, "+
-                        COLUMN_COLOR + " TEXT);";
+                        COLUMN_COLOR + " TEXT, " +
+                        COLUMN_BRAND + "TEXT);";
         db.execSQL(query);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        if(i1 > i ){
+            db.execSQL("ALTER TABLE "+ TABLE_NAME+ " ADD COLUMN "+ COLUMN_BRAND);
+        }
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }

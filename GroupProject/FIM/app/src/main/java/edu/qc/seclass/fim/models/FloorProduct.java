@@ -1,5 +1,9 @@
 package edu.qc.seclass.fim.models;
 
+
+import org.parceler.Parcel;
+
+@Parcel
 public class FloorProduct {
 
     Integer floorID;
@@ -18,6 +22,9 @@ public class FloorProduct {
         this.floorType = type;
         this.floorSpecies = species;
         this.floorColor = color;
+    }
+    public FloorProduct(){
+
     }
 
     //Getters and setters

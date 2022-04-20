@@ -2,17 +2,22 @@ package edu.qc.seclass.fim.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.List;
+import org.parceler.Parcels;
 
+import edu.qc.seclass.fim.DetailActivity;
 import edu.qc.seclass.fim.ProductActivity;
 import edu.qc.seclass.fim.R;
 import edu.qc.seclass.fim.models.FloorProduct;
@@ -54,19 +59,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
+
+        FloorProduct floorProduct = floorList.get(position);
+        holder.bind(floorProduct);
        // FloorProduct item = productList.get(position);
 //        holder.floor_category_txt.setText(String.valueOf(floor_category.get(position)));
 //        holder.floor_type_txt.setText(String.valueOf(floor_type.get(position)));
-        holder.floor_category_txt.setText(floorList.get(position).getFloorCategory());
-        holder.floor_type_txt.setText(String.valueOf(floorList.get(position).getFloorType()));
-        holder.floor_id_txt.setText(String.valueOf(floorList.get(position).getFloorID()));
+//        holder.floor_category_txt.setText(floorList.get(position).getFloorCategory());
+//        holder.floor_type_txt.setText(String.valueOf(floorList.get(position).getFloorType()));
+//        holder.floor_id_txt.setText(String.valueOf(floorList.get(position).getFloorID()));
     }
-//    @Override
-//    public void onBindViewHolder(@NonNull ViewHolder holder, int position){
-//
-//        FloorCategory item = categoryList.get(position);
-//        holder.category.setText(item.getCategory());
-//    }
 
     @Override
     public int getItemCount() {
@@ -78,19 +80,33 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 //        notifyDataSetChanged();
 //    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder{
         TextView floor_category_txt, floor_type_txt, floor_id_txt;
+        RelativeLayout relativeLayout;
 
         public ViewHolder(View view){
             super(view);
             floor_category_txt = view.findViewById(R.id.floor_category_txt);
             floor_type_txt = view.findViewById(R.id.floor_type_txt);
             floor_id_txt = view.findViewById(R.id.floor_id_txt);
+            relativeLayout = view.findViewById(R.id.relativelayout);
         }
 
 
-        @Override
-        public void onClick(View view) {
+        public void bind(FloorProduct floorProduct){
+            floor_category_txt.setText(floorProduct.getFloorCategory());
+            floor_type_txt.setText(floorProduct.getFloorType());
+            floor_id_txt.setText(String.valueOf(floorProduct.getFloorID()));
+
+            relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, DetailActivity.class);
+                    intent.putExtra("floor", Parcels.wrap(floorProduct));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+                }
+            });
 
         }
     }
