@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ public class AddActivity extends AppCompatActivity {
 
     Spinner category_input, type_input, species_input, color_input;
     Button add_button;
+    ImageView backButton;
 
     //Create arraylists to store the dependent spinner information
     String[] validCategories = {"Select a Category", "Wood", "Tile", "Stone", "Vinyl", "Laminate"};
@@ -48,7 +51,7 @@ public class AddActivity extends AppCompatActivity {
 
         //Add Button
         add_button = findViewById(R.id.btnPush);
-
+        backButton = findViewById(R.id.backBtn);
         //Spinners
         category_input = findViewById(R.id.categoryEdit);
         type_input = findViewById(R.id.typeEdit);
@@ -64,6 +67,17 @@ public class AddActivity extends AppCompatActivity {
         category_input.setPrompt("Select a Category");
 
         noSpeciesAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, noSpecies);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(AddActivity.this, ProductActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
 
         //Read the category selected, then show valid types
         category_input.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
