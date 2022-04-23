@@ -13,17 +13,19 @@
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/aladin"
         android:text="Flooring Icon Manager"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/appImage"
+    <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:fontFamily="@font/aladin"
+        android:text="Can’t-miss looks in tile, wood, stone and more."
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/userType"

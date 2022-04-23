@@ -13,7 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
@@ -22,211 +22,228 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="67dp"
         android:text="Flooring Manager"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="34sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewFloorCategory"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_below="@+id/TitleDetailView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/textViewFloorCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:text="Floor Category:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/floorCategoryID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="25dp"
+            android:text="Wood"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewFloorType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewFloorCategory"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Floor Type:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewFloorSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewFloorType"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Floor Species:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewFloorSpecies"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Color:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewColor"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Brand:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/floorTypeID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/floorCategoryID"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="102dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/textViewFloorType"
+            android:text="Solid"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/floorSpeciesID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/floorTypeID"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="Maple"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/colorID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/floorSpeciesID"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="Black"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/brandID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/colorID"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="ABC"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView12"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Quantity:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/quantityID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/priceID"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="26 square feet"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userType"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Price:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/priceID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sizeID"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="$20"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/userType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewBrand"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Size:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/sizeID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/brandID"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="2 square feet"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/menuBtn"
+        android:layout_width="16dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="141dp"
-        android:text="Floor Category:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textViewFloorType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewFloorCategory"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="26dp"
-        android:text="Floor Type:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textViewFloorSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewFloorType"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="26dp"
-        android:text="Floor Species:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textViewColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewFloorSpecies"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="26dp"
-        android:text="Color:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textViewBrand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewColor"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="26dp"
-        android:text="Brand:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/floorCategoryID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="143dp"
-        android:layout_toEndOf="@+id/textViewFloorCategory"
-        android:text="Wood"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/floorTypeID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="193dp"
-        android:layout_toEndOf="@+id/textViewFloorType"
-        android:text="Solid"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/floorSpeciesID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="242dp"
-        android:layout_toEndOf="@+id/textViewFloorSpecies"
-        android:text="Maple"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/colorID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="290dp"
-        android:layout_toEndOf="@+id/textViewColor"
-        android:text="Black"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/brandID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="342dp"
-        android:layout_toEndOf="@+id/textViewBrand"
-        android:text="ABC"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewBrand"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="22dp"
-        android:text="Quantity:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/quantityID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="388dp"
-        android:layout_toEndOf="@+id/textView10"
-        android:text="26 square feet"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView10"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="24dp"
-        android:text="Price:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/priceID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="436dp"
-        android:layout_toEndOf="@+id/textView12"
-        android:text="$20"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/userType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView12"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="16dp"
-        android:text="Size:"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/sizeID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="475dp"
-        android:layout_toEndOf="@+id/userType"
-        android:text="2 square feet"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="19dp"
+        app:srcCompat="@drawable/_dots" />
 
 </RelativeLayout>

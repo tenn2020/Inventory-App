@@ -37,6 +37,7 @@ public class inventoryDB extends SQLiteOpenHelper {
                         COLUMN_SPECIES + " TEXT, "+
                         COLUMN_COLOR + " TEXT, " +
                         COLUMN_BRAND + "TEXT);";
+
         db.execSQL(query);
     }
 

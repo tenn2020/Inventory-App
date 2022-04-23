@@ -44,7 +44,6 @@ public class DetailActivity extends AppCompatActivity {
             brandId.setText("Armstrong");
             priceId.setText("$45.00");
             sizeId.setText("12");
-
         }else if(floorProduct.getFloorCategory().equals("Wood")){
             brandId.setText("Shaw");
             priceId.setText("$40.00");
