@@ -9,10 +9,14 @@
         <entry key="..\:/Users/aleja/Desktop/370Project/oldRecycler/370Spring22Sec57Team1/GroupProject/FIM/app/src/main/res/layout/activity_product.xml" value="0.32395833333333335" />
         <entry key="..\:/Users/aleja/Desktop/370Project/oldRecycler/370Spring22Sec57Team1/GroupProject/FIM/app/src/main/res/layout/product_view.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/aleja/OneDrive - CUNY/Spring 2022/CSCI 370-57 Andy-Abreu/Group Project/370Spring22Sec57Team1/GroupProject/FIM/app/src/main/res/layout/activity_add.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/layout_bg.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/rounded_edittext.xml" value="0.1585" />
         <entry key="app/src/main/res/layout/activity_add.xml" value="0.2125" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.200384521484375" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.144256591796875" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.2125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.10829162597656253" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16869964599609377" />
         <entry key="app/src/main/res/layout/activity_product.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/product_category.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/product_view.xml" value="0.11911231884057971" />

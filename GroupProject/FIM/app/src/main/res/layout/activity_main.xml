@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loginScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/orange_background_wallpaper_5"
     android:gravity="center"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="130dp"
         android:fontFamily="@font/aladin"
         android:text="Flooring Icon Manager"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="48sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/appName"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/aladin"
         android:text="Can’t-miss looks in tile, wood, stone and more."
-        android:textSize="20sp" />
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/userType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentStart="false"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="101dp"
+        android:fontFamily="@font/amaranth"
         android:text="Please select the user type"
         android:textColor="#000000"
         android:textSize="20sp" />
@@ -40,7 +52,12 @@
         android:id="@+id/customerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/userType"
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="23dp"
+        android:backgroundTint="#FD9700"
         android:text="Customer"
         android:textSize="20sp" />
 
@@ -48,14 +65,25 @@
         android:id="@+id/employeeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/customerBtn"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="false"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FD9700"
         android:text="Employee"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        tools:layout_centerHorizontal="false" />
 
     <TextView
         android:id="@+id/madeBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Made By: Tenzin, Fahim, Abdul, Alejandra, Marwan" />
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:text="Made By: Tenzin, Fahim, Abdul, Alejandra, Marwan"
+        android:textColor="#FFFFFF" />
 
-</LinearLayout>
+</RelativeLayout>

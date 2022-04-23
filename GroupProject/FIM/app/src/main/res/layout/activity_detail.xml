@@ -6,38 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <ImageView
-        android:id="@+id/backImg"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="70dp"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-
-    <TextView
-        android:id="@+id/TitleDetailView"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="67dp"
-        android:text="Flooring Manager"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:background="@drawable/background"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/backImg"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="55dp"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        <TextView
+            android:id="@+id/TitleDetailView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="71dp"
+            android:layout_marginTop="50dp"
+            android:text="Flooring Manager"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TitleDetailView"
+        android:layout_below="@+id/layoutTop"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:background="#C6C2C2"
+        android:elevation="100dp"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -242,7 +247,7 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="19dp"
         app:srcCompat="@drawable/_dots" />
 

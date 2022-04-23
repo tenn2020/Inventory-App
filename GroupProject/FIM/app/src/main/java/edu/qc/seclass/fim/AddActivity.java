@@ -67,11 +67,12 @@ public class AddActivity extends AppCompatActivity {
         category_input.setPrompt("Select a Category");
 
         noSpeciesAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, noSpecies);
-
+        String value = "customer";
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(AddActivity.this, ProductActivity.class);
+                //intent.putExtra("key", value);
                 startActivity(intent);
                 finish();
 
