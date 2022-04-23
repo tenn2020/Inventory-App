@@ -11,12 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import edu.qc.seclass.fim.Adapters.ProductAdapter;
 import edu.qc.seclass.fim.models.FloorProduct;
@@ -32,20 +34,15 @@ public class ProductActivity extends AppCompatActivity {
     private ArrayList<FloorProduct> floorList;
     FloatingActionButton addProductBtn;
     ImageView backImage;
+    SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
         this.getSupportActionBar().hide();
 
-
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
         floorList = getFloors();
-//        FloorProduct floor1 = new FloorProduct();
-//        floor1.setCategory("Wood");
-
-//        floorList.add(floor1);
-//        floorList.add(floor1);
 
         //productAdapter.setList(floorList);
         backImage = findViewById(R.id.back_image);
@@ -75,12 +72,6 @@ public class ProductActivity extends AppCompatActivity {
             }
         });
 
-//        myDB = new inventoryDB(ProductActivity.this);
-//        floor_id = new ArrayList<>();
-//        floor_category = new ArrayList<>();
-//        floor_type = new ArrayList<>();
-//        floor_species = new ArrayList<>();
-//        floor_color = new ArrayList<>();
 
 //        storeDataInArrayList();
 //        productAdapter = new ProductAdapter(ProductActivity.this,this ,  floor_id,  floor_category,  floor_type,  floor_species,  floor_color );
@@ -90,8 +81,38 @@ public class ProductActivity extends AppCompatActivity {
         categoryRecyclerView.setAdapter(productAdapter);
         categoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        searchView = findViewById(R.id.searchView);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                filterList(s);
+                return true;
+            }
+
+        });
     }
 
+    private void filterList(String text) {
+        ArrayList<FloorProduct> filterList = new ArrayList<>();
+        for(FloorProduct floor : floorList){
+            if(floor.getFloorCategory().toLowerCase().contains(text.toLowerCase())){
+                filterList.add(floor);
+            }
+        }
+        if(filterList.isEmpty()){
+            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+        }else{
+            productAdapter.setFilteredList(filterList);
+        }
+
+
+    }
 //    void storeDataInArrayList(){
 //        Cursor cursor = myDB.readAllData();
 //        if(cursor.getCount() ==  0){

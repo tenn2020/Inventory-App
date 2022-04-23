@@ -64,7 +64,7 @@ public class AddActivity extends AppCompatActivity {
 
         categoryAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validCategories);
         category_input.setAdapter(categoryAdapter);
-        category_input.setPrompt("Select a Category");
+        category_input.setPrompt("Select a tCategory");
 
         noSpeciesAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, noSpecies);
         String value = "customer";

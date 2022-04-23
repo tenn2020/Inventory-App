@@ -44,6 +44,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         this.context = context;
         this.floorList = floor;
     }
+    public void setFilteredList(ArrayList<FloorProduct> filteredList){
+        this.floorList = filteredList;
+        notifyDataSetChanged();
+    }
 //    public ProductAdapter(ProductActivity activity){
 //        this.activity = activity;
 //    }
@@ -109,5 +113,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             });
 
         }
+
     }
 }

@@ -9,10 +9,10 @@
     <RelativeLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="96dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/background"
         android:orientation="vertical"
-        android:paddingBottom="5dp">
+        android:paddingBottom="10dp">
 
         <TextView
             android:id="@+id/textView"
@@ -37,21 +37,6 @@
             android:layout_marginTop="17dp"
             app:srcCompat="?attr/actionModeCloseDrawable" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="0dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableStart="@android:drawable/ic_menu_search"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Search" />
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
@@ -61,6 +46,19 @@
             android:layout_marginTop="13dp"
             android:layout_marginEnd="11dp"
             app:srcCompat="?attr/actionModeShareDrawable" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:iconifiedByDefault="false"
+            android:queryHint="Floor Category Search" />
 
     </RelativeLayout>
 
