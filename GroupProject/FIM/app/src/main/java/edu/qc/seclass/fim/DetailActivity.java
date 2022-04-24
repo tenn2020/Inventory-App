@@ -66,6 +66,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(DetailActivity.this, ProductActivity.class);
+                intent.putExtra("key", getIntent().getExtras().getString("key"));
                 startActivity(intent);
                 finish();
             }
