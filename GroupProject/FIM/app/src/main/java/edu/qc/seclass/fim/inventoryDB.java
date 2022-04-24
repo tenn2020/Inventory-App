@@ -66,6 +66,21 @@ public class inventoryDB extends SQLiteOpenHelper {
         }
     }
 
+    Boolean hasFloor(String categoryValue, String typeValue, String speciesValue, String colorValue){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = String.format("SELECT * FROM %s WHERE %s LIKE \"%s\" AND  %s LIKE \"%s\" AND %s LIKE \"%s\"", TABLE_NAME, COLUMN_CATEGORY, categoryValue
+        , COLUMN_TYPE, typeValue, COLUMN_COLOR, colorValue);
+        Cursor cursor = db.rawQuery(query,null);
+        if (cursor.getCount() <= 0){
+            cursor.close();
+            return false;
+        }
+        else {
+            cursor.close();
+            return true;
+        }
+    }
+
     Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();

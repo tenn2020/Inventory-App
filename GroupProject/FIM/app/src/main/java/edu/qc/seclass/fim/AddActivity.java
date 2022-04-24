@@ -173,11 +173,20 @@ public class AddActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             inventoryDB db = new inventoryDB(AddActivity.this);
-                            db.addFloor(category_input.getSelectedItem().toString().trim(),
+                            if (db.hasFloor(category_input.getSelectedItem().toString().trim(),
                                     type_input.getSelectedItem().toString().trim(),
                                     species_input.getSelectedItem().toString().trim(),
-                                    color_input.getSelectedItem().toString().trim());
-                            Toast.makeText(getApplicationContext(), "Added Successfully!", Toast.LENGTH_SHORT).show();
+                                    color_input.getSelectedItem().toString().trim()))
+                            {
+                                Toast.makeText(getApplicationContext(), "Floor Already Exists!", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                db.addFloor(category_input.getSelectedItem().toString().trim(),
+                                        type_input.getSelectedItem().toString().trim(),
+                                        species_input.getSelectedItem().toString().trim(),
+                                        color_input.getSelectedItem().toString().trim());
+                                Toast.makeText(getApplicationContext(), "Added Successfully!", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                     alertBuilder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
