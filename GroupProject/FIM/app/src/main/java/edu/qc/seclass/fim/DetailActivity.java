@@ -3,10 +3,13 @@ package edu.qc.seclass.fim;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.parceler.Parcels;
 
@@ -72,5 +75,21 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void deleteFloor(View view){
+        inventoryDB db = new inventoryDB(getApplicationContext());
+        String sql = String.format("DELETE FROM my_store WHERE " +
+                "floor_category = \"%s\" " +
+                "AND  floor_type = \"%s\" " +
+                "AND floor_species = \"%s\" " +
+                "AND floor_color = \"%s\"",
+                this.categoryId.getText(), this.typeId.getText(), this.speciesId.getText(), this.colorId.getText());
+        long oldRowCount = DatabaseUtils.queryNumEntries(db.getWritableDatabase(), "my_store");
+        db.getWritableDatabase().execSQL(sql);
+        long newRowCount = DatabaseUtils.queryNumEntries(db.getWritableDatabase(), "my_store");
+        if (newRowCount < oldRowCount){
+            Toast.makeText(getApplicationContext(),"Floor successfully deleted.",Toast.LENGTH_LONG).show();
+        }
     }
 }
