@@ -64,7 +64,7 @@ public class AddActivity extends AppCompatActivity {
 
         categoryAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validCategories);
         category_input.setAdapter(categoryAdapter);
-        category_input.setPrompt("Select a tCategory");
+        category_input.setPrompt("Select a Category");
 
         noSpeciesAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, noSpecies);
         String value = "customer";
@@ -72,7 +72,11 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(AddActivity.this, ProductActivity.class);
-                //intent.putExtra("key", value);
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    String value = extras.getString("key");
+                    intent.putExtra("key", value);
+                }
                 startActivity(intent);
                 finish();
 

@@ -75,6 +75,14 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
+        View deleteView = findViewById(R.id.layoutBelow);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.getString("key") != null) {
+            String value = extras.getString("key");
+            if(!value.equals("employee")){
+                deleteView.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 
     public void deleteFloor(View view){

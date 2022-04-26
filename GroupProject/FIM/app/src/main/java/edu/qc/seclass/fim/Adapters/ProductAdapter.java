@@ -3,6 +3,7 @@ package edu.qc.seclass.fim.Adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     private Activity activity;
 //    private ArrayList floor_id, floor_category, floor_type, floor_species, floor_color;
     private Context context;
+    private Activity productActivity;
     private ArrayList<FloorProduct> floorList;
 //    public ProductAdapter(Activity activity, Context context, ArrayList floor_id, ArrayList floor_category, ArrayList floor_type, ArrayList floor_species, ArrayList floor_color){
 //        this.context = context;
@@ -40,9 +42,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 //        this.floor_color = floor_color;
 //
 //    }
-    public ProductAdapter(Context context, ArrayList<FloorProduct> floor){
+    public ProductAdapter(Context context, ArrayList<FloorProduct> floor, Activity productActivity){
         this.context = context;
         this.floorList = floor;
+        this.productActivity = productActivity;
     }
     public void setFilteredList(ArrayList<FloorProduct> filteredList){
         this.floorList = filteredList;
@@ -65,6 +68,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
 
         FloorProduct floorProduct = floorList.get(position);
+
         holder.bind(floorProduct);
        // FloorProduct item = productList.get(position);
 //        holder.floor_category_txt.setText(String.valueOf(floor_category.get(position)));
@@ -108,6 +112,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     Intent intent = new Intent(context, DetailActivity.class);
                     intent.putExtra("floor", Parcels.wrap(floorProduct));
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                    Bundle extras = productActivity.getIntent().getExtras();
+                    if (extras != null) {
+                        String value = extras.getString("key");
+                        intent.putExtra("key", value);
+                    }
                     context.startActivity(intent);
                 }
             });

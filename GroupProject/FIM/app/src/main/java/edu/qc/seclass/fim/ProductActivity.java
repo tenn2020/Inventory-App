@@ -50,13 +50,18 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(ProductActivity.this, MainActivity.class);
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    String value = extras.getString("key");
+                        intent.putExtra("key", value);
+                }
                 startActivity(intent);
                 finish();
             }
         });
         addProductBtn = findViewById(R.id.addButton);
         Bundle extras = getIntent().getExtras();
-        if (extras != null) {
+        if (extras != null && extras.getString("key") != null) {
             String value = extras.getString("key");
             if(value.equals("customer")){
                 addProductBtn.setVisibility(View.INVISIBLE);
@@ -75,7 +80,7 @@ public class ProductActivity extends AppCompatActivity {
 
 //        storeDataInArrayList();
 //        productAdapter = new ProductAdapter(ProductActivity.this,this ,  floor_id,  floor_category,  floor_type,  floor_species,  floor_color );
-        productAdapter = new ProductAdapter(getApplicationContext(), floorList);
+        productAdapter = new ProductAdapter(getApplicationContext(), floorList, this);
         categoryRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
         });
         categoryRecyclerView.setAdapter(productAdapter);

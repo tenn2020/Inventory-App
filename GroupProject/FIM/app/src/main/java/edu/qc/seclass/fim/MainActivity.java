@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         employeeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String value = "employee";
                 final Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                intent.putExtra("key", value);
                 startActivity(intent);
                 finish();
             }
