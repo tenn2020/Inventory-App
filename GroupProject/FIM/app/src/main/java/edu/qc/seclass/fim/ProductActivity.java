@@ -104,6 +104,7 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     private void filterList(String text) {
+        floorList = getFloors();
         ArrayList<FloorProduct> filterList = new ArrayList<>();
         for(FloorProduct floor : floorList){
             if(floor.getFloorCategory().toLowerCase().contains(text.toLowerCase())){
@@ -111,6 +112,7 @@ public class ProductActivity extends AppCompatActivity {
             }
         }
         if(filterList.isEmpty()){
+            productAdapter.setFilteredList(filterList); //if no results, list is still updated to show nothing
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
         }else{
             productAdapter.setFilteredList(filterList);
