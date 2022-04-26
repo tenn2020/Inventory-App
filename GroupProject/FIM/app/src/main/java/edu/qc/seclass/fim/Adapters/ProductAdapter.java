@@ -30,6 +30,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 //    private ArrayList floor_id, floor_category, floor_type, floor_species, floor_color;
     private Context context;
     private ArrayList<FloorProduct> floorList;
+    private String value;
 //    public ProductAdapter(Activity activity, Context context, ArrayList floor_id, ArrayList floor_category, ArrayList floor_type, ArrayList floor_species, ArrayList floor_color){
 //        this.context = context;
 //        this.activity = activity;
@@ -40,9 +41,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 //        this.floor_color = floor_color;
 //
 //    }
-    public ProductAdapter(Context context, ArrayList<FloorProduct> floor){
+    public ProductAdapter(Context context, ArrayList<FloorProduct> floor, String value){
         this.context = context;
         this.floorList = floor;
+        this.value = value;
     }
     public void setFilteredList(ArrayList<FloorProduct> filteredList){
         this.floorList = filteredList;
@@ -107,6 +109,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 public void onClick(View view) {
                     Intent intent = new Intent(context, DetailActivity.class);
                     intent.putExtra("floor", Parcels.wrap(floorProduct));
+                    intent.putExtra("key", value);
+                    if (value.equalsIgnoreCase("customer")) intent.putExtra("key", "customer");
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }
