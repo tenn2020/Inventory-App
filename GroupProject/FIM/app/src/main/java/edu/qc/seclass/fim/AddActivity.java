@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 public class AddActivity extends AppCompatActivity {
 
     Spinner category_input, type_input, species_input, color_input;
+    EditText quantity_input;
     Button add_button;
     ImageView backButton;
 
@@ -51,6 +53,7 @@ public class AddActivity extends AppCompatActivity {
 
         //Add Button
         add_button = findViewById(R.id.btnPush);
+        add_button.setVisibility(View.INVISIBLE);
         backButton = findViewById(R.id.backBtn);
         //Spinners
         category_input = findViewById(R.id.categoryEdit);
@@ -65,6 +68,15 @@ public class AddActivity extends AppCompatActivity {
         categoryAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validCategories);
         category_input.setAdapter(categoryAdapter);
         category_input.setPrompt("Select a Category");
+
+        //Integer inputs
+        quantity_input = findViewById(R.id.quantityEdit);
+        quantity_input.setVisibility(View.INVISIBLE);
+        quantity_input.setText("0");
+        // Set default selections
+        category_input.setSelection(0);
+        species_input.setSelection(0);
+        color_input.setSelection(0);
 
         noSpeciesAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, noSpecies);
         String value = "customer";
@@ -82,13 +94,10 @@ public class AddActivity extends AppCompatActivity {
 
             }
         });
-
-
         //Read the category selected, then show valid types
         category_input.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> category, View view, int position, long id) {
-
                 if (position == 1){ //Wood
                     typeAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validWoodTypes);
                     speciesAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validSpecies);
@@ -96,6 +105,8 @@ public class AddActivity extends AppCompatActivity {
                     species_input.setVisibility(View.VISIBLE);
                     type_input.setVisibility(View.VISIBLE);
                     color_input.setVisibility(View.VISIBLE);
+                    quantity_input.setVisibility(View.VISIBLE);
+
                 }
                 else if (position == 2){ //Tile
                     typeAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validTileTypes);
@@ -104,6 +115,8 @@ public class AddActivity extends AppCompatActivity {
                     species_input.setVisibility(View.GONE);
                     type_input.setVisibility(View.VISIBLE);
                     color_input.setVisibility(View.VISIBLE);
+                    quantity_input.setVisibility(View.VISIBLE);
+
                 }
                 else if (position == 3){ //Stone
                     typeAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validStoneTypes);
@@ -112,6 +125,8 @@ public class AddActivity extends AppCompatActivity {
                     species_input.setVisibility(View.GONE);
                     type_input.setVisibility(View.VISIBLE);
                     color_input.setVisibility(View.VISIBLE);
+                    quantity_input.setVisibility(View.VISIBLE);
+
                 }
                 else if (position == 4){ //Vinyl
                     typeAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validVinylTypes);
@@ -120,6 +135,8 @@ public class AddActivity extends AppCompatActivity {
                     species_input.setVisibility(View.GONE);
                     type_input.setVisibility(View.VISIBLE);
                     color_input.setVisibility(View.VISIBLE);
+                    quantity_input.setVisibility(View.VISIBLE);
+
                 }
                 else if (position == 5){ //Laminate
                     typeAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, validLaminateTypes);
@@ -128,11 +145,15 @@ public class AddActivity extends AppCompatActivity {
                     species_input.setVisibility(View.GONE);
                     type_input.setVisibility(View.VISIBLE);
                     color_input.setVisibility(View.VISIBLE);
+                    quantity_input.setVisibility(View.VISIBLE);
                 }
 
                 type_input.setAdapter(typeAdapter);
                 color_input.setAdapter(colorAdapter);
                 species_input.setAdapter(speciesAdapter);
+                add_button.setVisibility(View.VISIBLE);
+                type_input.setSelection(0);
+
                 type_input.setPrompt("Select a Type");
                 color_input.setPrompt("Select a Color");
                 species_input.setPrompt("Select a Species");
@@ -149,9 +170,13 @@ public class AddActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String categoryInput = category_input.getSelectedItem().toString();
-                String typeInput = type_input.getSelectedItem().toString();
-                String speciesInput = species_input.getSelectedItem().toString();
-                String colorInput = color_input.getSelectedItem().toString();
+                String typeInput = type_input.getSelectedItem() == null ? "null" : (type_input.getSelectedItem().toString());
+                String speciesInput = type_input.getSelectedItem() == null ? "null" : (species_input.getSelectedItem().toString());
+                String colorInput = type_input.getSelectedItem() == null ? "null" : (color_input.getSelectedItem().toString());
+//
+//                String speciesInput = species_input.getSelectedItem().toString();
+//                String colorInput = color_input.getSelectedItem().toString();
+                Integer quantityInput = Integer.parseInt(quantity_input.getText().toString());
 
                 if (categoryInput.equalsIgnoreCase("Select a Category")) {
                     Toast.makeText(getApplicationContext(), "Please Select a Valid Category", Toast.LENGTH_SHORT).show();
@@ -167,12 +192,14 @@ public class AddActivity extends AppCompatActivity {
                 else if (colorInput.equalsIgnoreCase("Select a Color")) {
                     Toast.makeText(getApplicationContext(), "Please Select a Valid Color", Toast.LENGTH_SHORT).show();
                 }
-
+                else if (quantityInput <= 0 || quantityInput > 100) {
+                    Toast.makeText(getApplicationContext(), "Please Enter a Quantity between 1 and 100.", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     //Show a dialog asking them to confirm the floor addition
                     AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddActivity.this);
-                    alertBuilder.setMessage(String.format("Category: %s\nType:%s\nSpecies:%s\nColor:%s",
-                            categoryInput, typeInput, speciesInput, colorInput)).setTitle("Are you sure you want to add this floor?");
+                    alertBuilder.setMessage(String.format("Category: %s\nType:%s\nSpecies:%s\nColor:%s\nQuantity:%d",
+                            categoryInput, typeInput, speciesInput, colorInput, quantityInput)).setTitle("Are you sure you want to add this floor?");
                     alertBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -188,7 +215,8 @@ public class AddActivity extends AppCompatActivity {
                                 db.addFloor(category_input.getSelectedItem().toString().trim(),
                                         type_input.getSelectedItem().toString().trim(),
                                         species_input.getSelectedItem().toString().trim(),
-                                        color_input.getSelectedItem().toString().trim());
+                                        color_input.getSelectedItem().toString().trim(),
+                                        Integer.parseInt(quantity_input.getText().toString().trim())) ;
                                 Toast.makeText(getApplicationContext(), "Added Successfully!", Toast.LENGTH_SHORT).show();
                             }
                         }

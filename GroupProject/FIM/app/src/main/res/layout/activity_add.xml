@@ -73,6 +73,14 @@
             android:hint="Product Color"
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/quantityEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Enter a Quantity" />
+
         <Button
             android:id="@+id/btnPush"
             android:layout_width="match_parent"
