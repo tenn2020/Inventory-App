@@ -7,7 +7,6 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,8 +18,8 @@ import edu.qc.seclass.fim.models.FloorProduct;
 public class DetailActivity extends AppCompatActivity {
 
     TextView categoryId, typeId, speciesId, colorId, brandId, quantityId, priceId, sizeId;
+
     ImageView back;
-    Button deleteButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,17 +74,7 @@ public class DetailActivity extends AppCompatActivity {
                 finish();
             }
         });
-        deleteButton = findViewById(R.id.deleteBtn);
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String value = extras.getString("key");
-            if(value.equals("customer")){
-                View deleteLayout = findViewById(R.id.layoutBelow);
-                deleteButton.setVisibility(View.INVISIBLE);
-                deleteLayout.setVisibility(View.INVISIBLE);
-            }
-        }
     }
 
     public void deleteFloor(View view){

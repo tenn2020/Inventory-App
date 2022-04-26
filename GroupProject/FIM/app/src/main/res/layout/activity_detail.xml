@@ -254,7 +254,7 @@
         android:background="#C6C2C2"
         android:elevation="100dp"
         android:orientation="vertical"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp" >
 
         <Button
             android:id="@+id/deleteBtn"
