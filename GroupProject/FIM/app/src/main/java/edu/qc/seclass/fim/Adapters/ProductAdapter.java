@@ -89,7 +89,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 //    }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView floor_category_txt, floor_type_txt, floor_id_txt;
+        TextView floor_category_txt, floor_type_txt, floor_id_txt, floor_quantity_txt;
         RelativeLayout relativeLayout;
 
         public ViewHolder(View view){
@@ -97,6 +97,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             floor_category_txt = view.findViewById(R.id.floor_category_txt);
             floor_type_txt = view.findViewById(R.id.floor_type_txt);
             floor_id_txt = view.findViewById(R.id.floor_id_txt);
+            floor_quantity_txt = view.findViewById((R.id.floor_quantity_txt));
             relativeLayout = view.findViewById(R.id.relativelayout);
         }
 
@@ -105,6 +106,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             floor_category_txt.setText(floorProduct.getFloorCategory());
             floor_type_txt.setText(floorProduct.getFloorType());
             floor_id_txt.setText(String.valueOf(floorProduct.getFloorID()));
+            floor_quantity_txt.setText(String.valueOf(floorProduct.getQuantity()));
 
             relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

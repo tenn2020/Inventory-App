@@ -212,7 +212,7 @@ public class AddActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Floor Already Exists!", Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                db.addFloor(category_input.getSelectedItem().toString().trim(),
+                                db.addFloor(db.getWritableDatabase(),category_input.getSelectedItem().toString().trim(),
                                         type_input.getSelectedItem().toString().trim(),
                                         species_input.getSelectedItem().toString().trim(),
                                         color_input.getSelectedItem().toString().trim(),

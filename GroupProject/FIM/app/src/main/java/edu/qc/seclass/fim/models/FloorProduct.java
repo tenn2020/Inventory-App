@@ -16,12 +16,13 @@ public class FloorProduct {
     Integer quantity;
 
     //Constructor
-    public FloorProduct(Integer id, String category, String type, String species, String color){
+    public FloorProduct(Integer id, String category, String type, String species, String color, String brand, Integer quantity){
         this.floorID = id;
         this.floorCategory = category;
         this.floorType = type;
         this.floorSpecies = species;
         this.floorColor = color;
+        this.quantity = quantity;
     }
     public FloorProduct(){
 

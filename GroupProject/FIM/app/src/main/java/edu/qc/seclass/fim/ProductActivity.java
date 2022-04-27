@@ -258,7 +258,9 @@ public class ProductActivity extends AppCompatActivity {
                     cursor.getString(1), //category
                     cursor.getString(2), //type
                     cursor.getString(3), //species
-                    cursor.getString(4)));//color
+                    cursor.getString(4), //color
+                    cursor.getString(5), //brand
+                    cursor.getInt(6)));//quantity
         }
         return list;
     }

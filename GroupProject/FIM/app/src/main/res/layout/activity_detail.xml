@@ -7,254 +7,46 @@
     tools:context=".DetailActivity">
 
     <RelativeLayout
-        android:id="@+id/layoutTop"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
-        android:paddingBottom="20dp">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/backImg"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="55dp"
+
+            android:layout_marginTop="10dp"
             app:srcCompat="?attr/actionModeCloseDrawable" />
 
         <TextView
             android:id="@+id/TitleDetailView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="71dp"
-            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Flooring Manager"
-            android:textColor="@color/black"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/layoutMid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutTop"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="#C6C2C2"
-        android:elevation="100dp"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
-
-        <TextView
-            android:id="@+id/textViewFloorCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:text="Floor Category:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/floorCategoryID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="25dp"
-            android:text="Wood"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewFloorType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewFloorCategory"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Floor Type:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textViewFloorSpecies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewFloorType"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Floor Species:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textViewColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewFloorSpecies"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Color:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textViewBrand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewColor"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Brand:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/floorTypeID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/floorCategoryID"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="102dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/textViewFloorType"
-            android:text="Solid"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/floorSpeciesID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/floorTypeID"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="Maple"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/colorID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/floorSpeciesID"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="Black"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/brandID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/colorID"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="ABC"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView12"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Quantity:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/quantityID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/priceID"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="26 square feet"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/userType"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Price:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/priceID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/sizeID"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="$20"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/userType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewBrand"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Size:"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/sizeID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/brandID"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="2 square feet"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/layoutBelow"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutMid"
+        android:layout_below="@id/floorInfoTable"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="#C6C2C2"
-        android:elevation="100dp"
-        android:orientation="vertical"
-        android:paddingBottom="20dp" >
+
+        android:background="#00C6C2C2"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/deleteBtn"
@@ -272,8 +64,311 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="50dp"
+
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="19dp"
         app:srcCompat="@drawable/_dots" />
+
+    <TableLayout
+        android:id="@+id/floorInfoTable"
+        android:layout_width="382dp"
+        android:layout_height="392dp"
+        android:layout_below="@id/linearLayout"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:padding="30dp"
+        tools:layout_marginTop="40dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewFloorCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Floor Category:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/floorCategoryID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="Wood"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewFloorType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Floor Type:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/floorTypeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="Solid"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewFloorSpecies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Floor Species:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/floorSpeciesID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="Maple"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Color:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/colorID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="Black"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewBrand"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+
+                android:text="Brand:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/brandID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="ABC"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/userType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Size:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/sizeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="2 square feet"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Price:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/priceID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="$20"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="fill"
+            android:outlineProvider="none"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Quantity:"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/quantityID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:paddingLeft="5dp"
+                android:text="26sqft"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:paddingLeft="30dp"
+                tools:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>

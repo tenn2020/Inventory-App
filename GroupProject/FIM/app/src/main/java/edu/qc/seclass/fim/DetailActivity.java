@@ -41,8 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         typeId.setText(floorProduct.getFloorType());
         speciesId.setText(floorProduct.getFloorSpecies());
         colorId.setText(floorProduct.getFloorColor());
-
-
+        quantityId.setText(floorProduct.getQuantity().toString());
         if(floorProduct.getFloorCategory().equals("Tile")){
             brandId.setText("Armstrong");
             priceId.setText("$45.00");
@@ -64,6 +63,9 @@ public class DetailActivity extends AppCompatActivity {
             priceId.setText("$70.00");
             sizeId.setText("8");
         }
+        Integer sqft = Integer.parseInt(sizeId.getText().toString()) * Integer.parseInt(quantityId.getText().toString());
+        String quantity = sqft.toString() + " sqft";
+        quantityId.setText(quantity);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
