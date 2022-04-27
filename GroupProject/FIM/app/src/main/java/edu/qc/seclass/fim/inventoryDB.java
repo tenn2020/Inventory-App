@@ -9,16 +9,11 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 public class inventoryDB extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "FloorInventory.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 4;
     private static final String TABLE_NAME = "my_store";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_CATEGORY = "floor_category";
@@ -48,20 +43,24 @@ public class inventoryDB extends SQLiteOpenHelper {
                         +COLUMN_QUANTITY + " INTEGER);";
 
         db.execSQL(query);
+        addFloor(db,"Wood", "Solid", "Oak", "Brown", 74);
+        addFloor(db,"Tile", "Resin", "N/A", "Beige", 42);
+        addFloor(db,"Stone", "Marble", "N/A", "Blue", 35);
+        addFloor(db,"Vinyl", "Water Resistant", "N/A", "Red", 63);
+        addFloor(db,"Laminate", "Regular", "N/A", "White", 48);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if(newVersion > oldVersion ){
-            db.execSQL("ALTER TABLE "+ TABLE_NAME+ " ADD COLUMN "+ COLUMN_BRAND);
-            db.execSQL("ALTER TABLE "+ TABLE_NAME+ " ADD COLUMN "+ COLUMN_QUANTITY);
+        if (oldVersion < newVersion){
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+            onCreate(db);
         }
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        onCreate(db);
     }
 
 
-    void addFloor(String category, String type, String species, String color, Integer quantity){
+    void addFloor(SQLiteDatabase db, String category, String type, String species, String color, Integer quantity){
         String brand = null;
         if(category.equals("Tile")){
             brand = "Armstrong";
@@ -78,8 +77,6 @@ public class inventoryDB extends SQLiteOpenHelper {
         else if(category.equals("Laminate")){
             brand = "Mohawk";
         }
-        
-        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_CATEGORY, category);
         cv.put(COLUMN_TYPE, type);
@@ -93,7 +90,7 @@ public class inventoryDB extends SQLiteOpenHelper {
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -115,7 +112,6 @@ public class inventoryDB extends SQLiteOpenHelper {
     Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
-
         Cursor cursor = null;
         if(db != null){
             cursor = db.rawQuery(query, null);
