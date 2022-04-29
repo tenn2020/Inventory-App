@@ -86,7 +86,7 @@ When performing unit tests, we will document methods that result in errors, and 
 
 ### 1.5 Technology
 
-We will use JUnit to provide inputs and expected outputs to different methods, and record their actual outputs. We will also manually test the application as users. 
+As a team we will be testing the app manually where we check each function and mention each result in the chart below. By doing this we determine if each function passed our expected result or not. 
 
 ### 2 Test Cases
 
