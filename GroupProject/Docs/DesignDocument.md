@@ -43,7 +43,7 @@ The deployment diagram shows how the components will be deployed on a mobile dev
 
 ![](images/state-diagram.png)
 
-The state diagram shows how the system transitions between various states. This state diagram accounts for user login, view, search, and add/edit/delete. Update Store Offering is a composite state that exits when both the store offering is changed, and the database is updated. This ensures that the database is synchronized with the store offering. Search, view and add/edit/delete loop back to view all products. The exit condition is that the user must exit the application. This diagram does not account for selecting search results, adding to a cart, or viewing a detailed product description.
+The state diagram shows how the system transitions between various states. This state diagram accounts for user login, view, search, and employee add/edit/delete. Update Store Offering is a composite state that exits when both the store offering is changed, and the database is updated. This ensures that the database is synchronized with the store offerings. Search, view and add/edit/delete loop back to view all products. The exit condition is that the user must exit the application. This diagram also accounts for viewing a detailed product description through the view product details class.
 
 ## 4 User Interface Design
 
