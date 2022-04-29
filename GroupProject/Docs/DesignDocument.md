@@ -23,13 +23,15 @@ The software runs on an Android Studio environment; hence, we are targeting the 
 
 ![](images/component-diagram.png)
 
-The component diagram closely follows the structure of the class diagram. This diagram provides information about the dependencies between components. For example, the lollipop between the Store Offerings and FloorDB components indicates that Store Offerings provides the interface required by the FloorDB, since a store offering object will contain a list of floors that will need to be added to the database. Similarly, the User component provides an Employee or User object which the Store Offerings requires, because there must be an employee who is able to edit the products list, and there must be a user who is requesting to view the store offerings. 
+
+
+The component diagram contains 6 components which encapsulate the functions provided by our application. The floor database is a required component of the Product Offerings component because the product offering component retrieves information about stock from the database. The product offering component provides an interface from which products can be changed or deleted. A user that is also an employee can add to a product offering, which updates the database. The floor component is used to make up the product offerings. The search engine is dependent on the product offerings, and provides both basic and hierarchical search. Together, these components form the core functionality of our application.
 
 ### 2.2 Deployment Diagram
 
 ![](images/deployment-diagram.png)
 
-The deployment diagram shows how the components will be deployed on a mobile device. The application will be deployed on an Android Device, and the components within the application are part of the FloorIconManager Application. The database is stored locally within the android device.
+The deployment diagram shows how the components will be deployed on a mobile device. The application will be deployed on an Android Device, specifically on the Android 11 Platform which uses API 30. Our application runs on this device. The database used to manage the store offerings is locally stored on the device, and created within the application
 
 ## 3 Low-Level Design
 
