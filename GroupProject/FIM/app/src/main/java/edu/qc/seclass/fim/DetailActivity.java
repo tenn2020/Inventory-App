@@ -7,6 +7,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,7 @@ import edu.qc.seclass.fim.models.FloorProduct;
 public class DetailActivity extends AppCompatActivity {
 
     TextView categoryId, typeId, speciesId, colorId, brandId, quantityId, priceId, sizeId;
-
+    Button editBtn;
     ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class DetailActivity extends AppCompatActivity {
         priceId = findViewById(R.id.priceID);
         sizeId = findViewById(R.id.sizeID);
         back = findViewById(R.id.backImg);
+        editBtn = findViewById(R.id.editBtn);
 
         FloorProduct floorProduct = Parcels.unwrap(getIntent().getParcelableExtra("floor"));
 
@@ -77,6 +79,16 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(DetailActivity.this, editActivity.class);
+                intent.putExtra("floor", Parcels.wrap(floorProduct));
+                startActivity(intent);
+                finish();
+            }
+        });
+
         View deleteView = findViewById(R.id.layoutBelow);
         Bundle extras = getIntent().getExtras();
         if (extras != null && extras.getString("key") != null) {
@@ -101,5 +113,13 @@ public class DetailActivity extends AppCompatActivity {
         if (newRowCount < oldRowCount){
             Toast.makeText(getApplicationContext(),"Floor successfully deleted.",Toast.LENGTH_LONG).show();
         }
+        final Intent intent = new Intent(DetailActivity.this, ProductActivity.class);
+        intent.putExtra("key", getIntent().getExtras().getString("key"));
+        startActivity(intent);
+        finish();
     }
+
+
+
+
 }

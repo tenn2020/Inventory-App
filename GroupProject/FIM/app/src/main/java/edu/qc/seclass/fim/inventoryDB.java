@@ -25,7 +25,7 @@ public class inventoryDB extends SQLiteOpenHelper {
 
 
 
-    public inventoryDB(@Nullable Context context) {
+    inventoryDB(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -107,6 +107,26 @@ public class inventoryDB extends SQLiteOpenHelper {
             cursor.close();
             return true;
         }
+    }
+
+    void updateData(String row_id, String category, String type, String species, String color, Integer quantity){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_CATEGORY, category);
+        cv.put(COLUMN_TYPE, type);
+        cv.put(COLUMN_SPECIES, species);
+        cv.put(COLUMN_COLOR, color);
+        cv.put(COLUMN_QUANTITY, quantity);
+
+
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     Cursor readAllData(){

@@ -26,23 +26,13 @@ import edu.qc.seclass.fim.models.FloorProduct;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
 
-//    private List<FloorProduct> productList;
     private Activity activity;
-//    private ArrayList floor_id, floor_category, floor_type, floor_species, floor_color;
     private Context context;
     private Activity productActivity;
     private ArrayList<FloorProduct> floorList;
-//    public ProductAdapter(Activity activity, Context context, ArrayList floor_id, ArrayList floor_category, ArrayList floor_type, ArrayList floor_species, ArrayList floor_color){
-//        this.context = context;
-//        this.activity = activity;
-//        this.floor_category = floor_category;
-//        this.floor_type = floor_type;
-//        this.floor_species = floor_species;
-//        this.floor_id = floor_id;
-//        this.floor_color = floor_color;
-//
-//    }
-    public ProductAdapter(Context context, ArrayList<FloorProduct> floor, Activity productActivity){
+
+    public ProductAdapter(Activity activity, Context context, ArrayList<FloorProduct> floor, Activity productActivity){
+        this.activity = activity;
         this.context = context;
         this.floorList = floor;
         this.productActivity = productActivity;
@@ -70,12 +60,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         FloorProduct floorProduct = floorList.get(position);
 
         holder.bind(floorProduct);
-       // FloorProduct item = productList.get(position);
-//        holder.floor_category_txt.setText(String.valueOf(floor_category.get(position)));
-//        holder.floor_type_txt.setText(String.valueOf(floor_type.get(position)));
-//        holder.floor_category_txt.setText(floorList.get(position).getFloorCategory());
-//        holder.floor_type_txt.setText(String.valueOf(floorList.get(position).getFloorType()));
-//        holder.floor_id_txt.setText(String.valueOf(floorList.get(position).getFloorID()));
     }
 
     @Override
@@ -83,10 +67,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         return floorList.size();
     }
 
-//    public void setList(List<FloorProduct> productList){
-//        this.productList = productList;
-//        notifyDataSetChanged();
-//    }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView floor_category_txt, floor_type_txt, floor_id_txt, floor_quantity_txt;
@@ -120,7 +100,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         String value = extras.getString("key");
                         intent.putExtra("key", value);
                     }
-                    context.startActivity(intent);
+                    activity.startActivityForResult(intent, 1);
                 }
             });
 

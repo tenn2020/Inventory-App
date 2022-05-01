@@ -2,6 +2,7 @@ package edu.qc.seclass.fim;
 
 import static android.view.View.INVISIBLE;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -87,7 +88,7 @@ public class ProductActivity extends AppCompatActivity {
 
 //        storeDataInArrayList();
 //        productAdapter = new ProductAdapter(ProductActivity.this,this ,  floor_id,  floor_category,  floor_type,  floor_species,  floor_color );
-        productAdapter = new ProductAdapter(getApplicationContext(), floorList, this);
+        productAdapter = new ProductAdapter(ProductActivity.this, getApplicationContext(), floorList, this);
         categoryRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
         });
         categoryRecyclerView.setAdapter(productAdapter);
@@ -196,6 +197,13 @@ public class ProductActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
+    }
 
     private void filterList(String text) {
         floorList = getFloors();
@@ -229,22 +237,7 @@ public class ProductActivity extends AppCompatActivity {
             productAdapter.setFilteredList(filterList);
         }
     }
-//    void storeDataInArrayList(){
-//        Cursor cursor = myDB.readAllData();
-//        if(cursor.getCount() ==  0){
-//            Toast.makeText(this, "No data", Toast.LENGTH_LONG).show();
-//        }else{
-//            while( cursor.moveToNext()){
-//                floor_id.add(cursor.getString(0));
-//                floor_category.add(cursor.getString(0));
-//                floor_type.add(cursor.getString(0));
-//                floor_species.add(cursor.getString(0));
-//                floor_color.add(cursor.getString(0));
-//
-//            }
-//        }
-//
-//    }
+
 
     private ArrayList<FloorProduct> getFloors(){
         ArrayList<FloorProduct> list = new ArrayList<>();
