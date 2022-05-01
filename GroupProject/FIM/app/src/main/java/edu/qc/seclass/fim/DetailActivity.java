@@ -1,5 +1,7 @@
 package edu.qc.seclass.fim;
 
+import static android.view.View.INVISIBLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,7 +21,7 @@ import edu.qc.seclass.fim.models.FloorProduct;
 public class DetailActivity extends AppCompatActivity {
 
     TextView categoryId, typeId, speciesId, colorId, brandId, quantityId, priceId, sizeId;
-    Button editBtn;
+    Button editBtn, delBtn;
     ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,9 @@ public class DetailActivity extends AppCompatActivity {
         sizeId = findViewById(R.id.sizeID);
         back = findViewById(R.id.backImg);
         editBtn = findViewById(R.id.editBtn);
-
+        delBtn = findViewById(R.id.deleteBtn);
         FloorProduct floorProduct = Parcels.unwrap(getIntent().getParcelableExtra("floor"));
+
 
         categoryId.setText(floorProduct.getFloorCategory());
         typeId.setText(floorProduct.getFloorType());
