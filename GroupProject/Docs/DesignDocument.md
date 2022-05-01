@@ -37,7 +37,7 @@ The deployment diagram shows how the components will be deployed on a mobile dev
 
 ### 3.1 Class Diagram
 
-![](images/design-team.png)
+![](images/design-team-updated.png)
 
 ### 3.2 Other Diagrams
 
