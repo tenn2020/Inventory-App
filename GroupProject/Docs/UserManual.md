@@ -1,5 +1,7 @@
 # User Manual
 
+- **Author**: Tenzin Norsang
+
 This application runs on any Android OS phone that has API 21 or above. The app functionality depends on the type of user. The Customer user type can only search products in the database, and the Employee user type can search, add, delete, and edit products in the database. 
 
 When you open the app, the first screen displayed is the login page that allows the user of the app to select one of the two options: Customer or Employee. 
