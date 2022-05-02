@@ -54,13 +54,15 @@ public class editActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.e("EditActivity", category+ type+ color+ quantity+ species);
-                category = category_input.toString();
-                type = type_input.toString();
-                color = color_input.toString();
-                //quantity = Integer.valueOf(quantity_input.toString());
-                species = species_input.toString();
+                category = category_input.getText().toString();
+                type = type_input.getText().toString();
+                color = color_input.getText().toString();
+                quantity = Integer.parseInt(quantity_input.getText().toString());
+                species = species_input.getText().toString();
                 inventoryDB myDB = new inventoryDB(editActivity.this);
                 myDB.updateData(String.valueOf(id), category, type, species, color, quantity );
+
+
             }
         });
 

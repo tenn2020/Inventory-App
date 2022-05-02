@@ -3,6 +3,7 @@ package edu.qc.seclass.fim.Adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,14 +70,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView floor_category_txt, floor_type_txt, floor_id_txt, floor_quantity_txt;
+        TextView floor_category_txt, floor_type_txt, floor_quantity_txt;
+        View floor_color_view;
         RelativeLayout relativeLayout;
 
         public ViewHolder(View view){
             super(view);
             floor_category_txt = view.findViewById(R.id.floor_category_txt);
             floor_type_txt = view.findViewById(R.id.floor_type_txt);
-            floor_id_txt = view.findViewById(R.id.floor_id_txt);
+            floor_color_view = view.findViewById(R.id.floor_color_view);
             floor_quantity_txt = view.findViewById((R.id.floor_quantity_txt));
             relativeLayout = view.findViewById(R.id.relativelayout);
         }
@@ -85,15 +87,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public void bind(FloorProduct floorProduct){
             floor_category_txt.setText(floorProduct.getFloorCategory());
             floor_type_txt.setText(floorProduct.getFloorType());
-            floor_id_txt.setText(String.valueOf(floorProduct.getFloorID()));
+            floor_color_view.setBackgroundColor(Color.parseColor(floorProduct.getFloorColor().toLowerCase()));
             floor_quantity_txt.setText(String.valueOf(floorProduct.getQuantity()));
-
+            floor_color_view.setVisibility(View.VISIBLE);
             relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, DetailActivity.class);
                     intent.putExtra("floor", Parcels.wrap(floorProduct));
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     Bundle extras = productActivity.getIntent().getExtras();
                     if (extras != null) {

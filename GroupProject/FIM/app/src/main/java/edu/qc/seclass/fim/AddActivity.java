@@ -35,7 +35,7 @@ public class AddActivity extends AppCompatActivity {
     String[] validSpecies = {"Select a Species","Oak", "Hickory", "Maple", "Teak", "Ash"};
     String[] noSpecies = {"N/A"}; //If category is not wood, N/A will be the species
 
-    String[] validColors = {"Select a Color","Red", "Blue", "Beige", "Brown", "White"};
+    String[] validColors = {"Select a Color","Red", "Blue", "Grey", "Olive", "White"};
 
     //Spinner Adapters
     ArrayAdapter<String> categoryAdapter;

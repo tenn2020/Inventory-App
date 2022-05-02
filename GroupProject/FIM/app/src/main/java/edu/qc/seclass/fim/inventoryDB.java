@@ -13,7 +13,7 @@ public class inventoryDB extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "FloorInventory.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 9;
     private static final String TABLE_NAME = "my_store";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_CATEGORY = "floor_category";
@@ -43,8 +43,8 @@ public class inventoryDB extends SQLiteOpenHelper {
                         +COLUMN_QUANTITY + " INTEGER);";
 
         db.execSQL(query);
-        addFloor(db,"Wood", "Solid", "Oak", "Brown", 74);
-        addFloor(db,"Tile", "Resin", "N/A", "Beige", 42);
+        addFloor(db,"Wood", "Solid", "Oak", "Grey", 74);
+        addFloor(db,"Tile", "Resin", "N/A", "Olive", 42);
         addFloor(db,"Stone", "Marble", "N/A", "Blue", 35);
         addFloor(db,"Vinyl", "Water Resistant", "N/A", "Red", 63);
         addFloor(db,"Laminate", "Regular", "N/A", "White", 48);
