@@ -57,7 +57,7 @@ public class editActivity extends AppCompatActivity {
                 category = category_input.toString();
                 type = type_input.toString();
                 color = color_input.toString();
-                quantity = Integer.valueOf(quantity_input.toString());
+                //quantity = Integer.valueOf(quantity_input.toString());
                 species = species_input.toString();
                 inventoryDB myDB = new inventoryDB(editActivity.this);
                 myDB.updateData(String.valueOf(id), category, type, species, color, quantity );
