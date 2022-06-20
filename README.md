@@ -1,1 +1,1 @@
-# 370Spring22Sec57Team1
+# Android Mobile App Development - Group Project
